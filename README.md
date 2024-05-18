@@ -1,5 +1,7 @@
-### Hi there 👋
-
+How does pi attract others? -- Picharm!
+<figure>
+    <embed src="https://wakatime.com/share/@974cd1bf-f67e-44b6-b583-0472a71ce20a/22838a5c-998d-4570-afa4-0858b9d26a45.svg"></embed>
+</figure>
 <!--
 **Luna5akura/Luna5akura** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
