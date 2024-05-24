@@ -20,8 +20,8 @@ jobs:
 
     - name: Update README with WakaTime stats
       run: |
-        WAKATIME_STATS=$(curl -s "https://github-readme-stats.vercel.app/api/wakatime?username=your-username")
-        sed -i "s|![WakaTime stats](.*)|![WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=your-username)|" README.md
+        WAKATIME_STATS=$(curl -s "https://github-readme-stats.vercel.app/api/wakatime?username=Luna5akura")
+        sed -i "s|![WakaTime stats](.*)|![WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Luna5akura)|" README.md
         
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
