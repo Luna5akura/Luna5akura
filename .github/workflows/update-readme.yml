@@ -2,7 +2,10 @@ name: Update README
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 */12 * * *'
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -11,20 +14,25 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
-        node-version: '14'
+        python-version: '3.x'
 
-    - name: Update README with WakaTime stats
+    # - name: Install dependencies
+      # run: pip install -r requirements.txt
+
+    - name: Run Python script
+      run: python update_readme.py
+
+    - name: Commit changes
       run: |
-        WAKATIME_STATS=$(curl -s "https://github-readme-stats.vercel.app/api/wakatime?username=Luna5akura")
-        sed -i "s|![WakaTime stats](.*)|![WakaTime stats](https://github-readme-stats.vercel.app/api/wakatime?username=Luna5akura)|" README.md
-        
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add README.md
-        git commit -m "Update README with WakaTime stats"
+        git commit -m 'Update README with current date'
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
