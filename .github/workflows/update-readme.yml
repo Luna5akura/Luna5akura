@@ -35,9 +35,10 @@ jobs:
         git commit -m 'Update README with current date'
       continue-on-error: true
 
-    - name: Push changes
+    - name: Pull and push changes
       env:
         PAT: ${{ secrets.PAT }}
       run: |
         git remote set-url origin https://github-actions:${{ secrets.PAT }}@github.com/Luna5akura/Luna5akura.git
+        git pull origin main --rebase
         git push origin HEAD:main
