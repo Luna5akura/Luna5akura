@@ -1,6 +1,6 @@
 # How does pi attract others? -- Picharm!
 
-### Status: learning vim 🛌
+### Status: learning Japanese 🛌
 
 span
 
